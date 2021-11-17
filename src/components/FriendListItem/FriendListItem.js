@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import s from './FriendListItem.module.css';
+import defaultAvatar from './defaultAvatar.png';
 
 function FriendListItem({ avatar, name, isOnline }) {
   return (
@@ -10,6 +12,11 @@ function FriendListItem({ avatar, name, isOnline }) {
     </li>
   );
 }
+
+FriendListItem.defaultProps = {
+  avatar: defaultAvatar,
+  isOnline: false,
+};
 
 FriendListItem.propTypes = {
   avatar: PropTypes.string,
